@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col s12">
+      <h1>About</h1>
+      <p>
+      This projet allows to get the id for an entire thread in twitter. It works
+      by giving an ID and it take cares of looking for the previous tweets of the
+      thread and get the following ones.</p>
+      <p>
+      The best performance is archived using as a root(starting point) the las tweet,
+      since it just follows the chain. Using the first one as a root has the worst performance
+      since it has to look after more tweets in a twitter search.</p>
+      <p>The code for this project is available at <a href="https://github.com/yabirgb/hilos">GitHub</a>.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

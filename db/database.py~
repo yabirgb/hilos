@@ -1,0 +1,15 @@
+import os
+
+from peewee import *
+
+
+DB_NAME = "walid_test"
+DB_USER = os.environ.get("DBUSER", None)
+DB_PASS = os.environ.get("DBPASS", None)
+DB_HOST = os.environ.get("DBHOST", None)
+db = PostgresqlDatabase(
+    DB_NAME,  # Required by Peewee.
+    user=DB_USER,  # Will be passed directly to psycopg2.
+    password=DB_PASS,  # Ditto.
+    host=DB_HOST,  # Ditto.
+)

@@ -1,0 +1,24 @@
+from peewee import *
+
+
+from connection import connect
+
+db = connect()
+
+class Tweet(Model):
+    date = DateField()
+    reply_to = IntegerField()
+    username = CharField()
+    tweet_id = IntegerField()
+
+    class Meta:
+        database = db
+
+class Branch(Model):
+    hash_id = CharField()
+    older = IntegerField()
+    height = IntegerField()
+    tweets 
+
+    class Meta:
+        database = db

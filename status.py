@@ -6,7 +6,10 @@ import tweepy
 
 from db.models_data import Tweet, Branch, calldb
 
-auth = tweepy.OAuthHandler("lUbMhRxBpnlAeA2BSK0519QBF", "Z64Yfg8Z7OMbIAhbVc1WXNXXADxDmk8VqHvnFwDXiE8WKteEQA")
+CLIENT = os.environ.get("CLIENT", None)
+SECRET = os.environ.get("SECRET", None)
+
+auth = tweepy.OAuthHandler(CLIENT, SECRET)
 
 
 

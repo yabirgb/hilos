@@ -3,22 +3,39 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Manuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <title>Manuel</title>
 </head>
 
 <body>
 
-  <div id="container"></div>
+  <nav class="blue lighten-2">
+    <ul class="left hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <div id="container-fluid"><div class="row">
+    <div id="tweets" class="col s12"></div>
+  </div></div>
+
+  <div class="fixed-action-btn">
+{% if page > 1 %}
+  <a href="{{ url_for('manuel', page=page - 1) }}" class="btn-floating btn-large waves-effect waves-light blue darken-1"><i class="material-icons">keyboard_arrow_left</i></a>
+{% endif %}
+{% if pages > page %}
+  <a href="{{ url_for('manuel', page=page + 1) }}" class="btn-floating btn-large waves-effect waves-light blue darken-1"><i class="material-icons">keyboard_arrow_right</i></a>
+{% endif %}
+  </div>
 
   <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(event) {
-    {% for status in tweets %}
-    twttr.widgets.createTweet('{{status.tweet_id}}',document.getElementById('container'),{conversation:'none'});
-    {%endfor%}
+    {% for status in tweets %}twttr.widgets.createTweet('{{status.tweet_id}}',document.getElementById('tweets'),{conversation:'none', align:'center'});{%endfor%}
   });
   </script>
-
 </body>
 
 </html>

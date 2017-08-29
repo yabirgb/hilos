@@ -83,6 +83,3 @@ def root(tid):
 
         print (e.api_code)
         print (e.reason)
-
-
-root(902041195022610432)

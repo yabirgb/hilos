@@ -11,7 +11,7 @@ oauthlib==2.0.2
 peewee==2.10.1
 peewee-db-evolve==0.6.4
 psycopg2==2.7.3.1
-requests==2.18.4
+requests==2.20.0
 requests-oauthlib==0.8.0
 six==1.10.0
 tweepy==3.5.0
